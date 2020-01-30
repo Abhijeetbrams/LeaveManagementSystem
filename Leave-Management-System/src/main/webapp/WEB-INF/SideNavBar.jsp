@@ -22,7 +22,7 @@
   <sec:authorize access="hasRole('ADMIN')">
    
 
-  <li><h4><a  href="#">Dashboard</a></h4></li>
+  <li><h4><a  href="/leaves/leaveTracking">Dashboard</a></h4></li>
   <li><h4><a  href="#">Department</a></h4></li>
   <li><h4><a href="#news">Leave Type</a></h4></li>
   <li><h4><a href="#contact">Employees</a></h4></li>
