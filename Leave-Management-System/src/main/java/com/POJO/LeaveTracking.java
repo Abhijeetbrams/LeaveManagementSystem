@@ -12,18 +12,18 @@ import javax.persistence.Table;
 public class LeaveTracking {
 
 	@Id
-	@GeneratedValue(strategy=GenerationType.IDENTITY)
+	@GeneratedValue(strategy=GenerationType.AUTO)//AUTO -for auto generated id
 	@Column(name="id")
 	private int id;
 	
-	@Column(name="user")
-	private  String user_name;
-	
 	@Column(name="username")
-	private String user_type;
+	private  String username;
 	
 	@Column(name="usertype")
-	private String leave_type;
+	private String usertype;
+	
+	@Column(name="leavetype")
+	private String leavetype;
 	
 	@Column(name="FromDate")
 	private String from_date;
@@ -34,6 +34,8 @@ public class LeaveTracking {
 	@Column(name="Remarks")
 	private String remarks;
 
+	
+
 	public int getId() {
 		return id;
 	}
@@ -42,28 +44,30 @@ public class LeaveTracking {
 		this.id = id;
 	}
 
-	public String getUser_name() {
-		return user_name;
+
+
+	public String getUsername() {
+		return username;
 	}
 
-	public void setUser_name(String user_name) {
-		this.user_name = user_name;
+	public void setUsername(String username) {
+		this.username = username;
 	}
 
-	public String getUser_type() {
-		return user_type;
+	public String getUsertype() {
+		return usertype;
 	}
 
-	public void setUser_type(String user_type) {
-		this.user_type = user_type;
+	public void setUsertype(String usertype) {
+		this.usertype = usertype;
 	}
 
-	public String getLeave_type() {
-		return leave_type;
+	public String getLeavetype() {
+		return leavetype;
 	}
 
-	public void setLeave_type(String leave_type) {
-		this.leave_type = leave_type;
+	public void setLeavetype(String leavetype) {
+		this.leavetype = leavetype;
 	}
 
 	public String getFrom_date() {
@@ -90,21 +94,24 @@ public class LeaveTracking {
 		this.remarks = remarks;
 	}
 
-	@Override
-	public String toString() {
-		return "LeaveTracking [id=" + id + ", user_name=" + user_name + ", user_type=" + user_type + ", leave_type="
-				+ leave_type + ", from_date=" + from_date + ", to_date=" + to_date + ", remarks=" + remarks + "]";
-	}
+	
 
-	public LeaveTracking(String user_name, String user_type, String leave_type, String from_date, String to_date,
+	public LeaveTracking(String username, String usertype, String leavetype, String from_date, String to_date,
 			String remarks) {
 		
-		this.user_name = user_name;
-		this.user_type = user_type;
-		this.leave_type = leave_type;
+		this.username = username;
+		this.usertype = usertype;
+		this.leavetype = leavetype;
 		this.from_date = from_date;
 		this.to_date = to_date;
 		this.remarks = remarks;
+	}
+
+	
+	@Override
+	public String toString() {
+		return "LeaveTracking [id=" + id + ", username=" + username + ", usertype=" + usertype + ", leavetype="
+				+ leavetype + ", from_date=" + from_date + ", to_date=" + to_date + ", remarks=" + remarks + "]";
 	}
 
 	public LeaveTracking() {

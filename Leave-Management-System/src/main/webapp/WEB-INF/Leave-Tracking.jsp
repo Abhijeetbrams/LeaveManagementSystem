@@ -49,9 +49,9 @@
 				<c:forEach var="tempLeaves" items="${leaves}">
 				
 					<tr>
-						<td> ${tempLeaves.user_name} </td>
-						<td> ${tempLeaves.user_type} </td>
-						<td> ${tempLeaves.leave_type} </td>
+						<td> ${tempLeaves.username} </td>
+						<td> ${tempLeaves.usertype} </td>
+						<td> ${tempLeaves.leavetype} </td>
 						<td> ${tempLeaves.from_date} </td>
 						<td> ${tempLeaves.to_date} </td>
 						<td> ${tempLeaves.remarks} </td>

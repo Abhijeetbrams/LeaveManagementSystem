@@ -13,7 +13,8 @@
 <div style="margin-left:25%;padding:1px 16px;height:1000px;">
 
 <form:form action="${pageContext.request.contextPath}/logout" method="POST">
-
+<p>${username}</p>
+<p>${role}</p>
 <input type="submit" value="logout"/>
 
 </form:form>

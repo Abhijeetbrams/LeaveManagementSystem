@@ -22,7 +22,6 @@ public class LeaveTrackingImpl implements LeaveTrackingService {
 	
 	
     @Override
-    
 	public List<LeaveTracking> findAll() {
     	System.out.println( leaveTrackingRepo.findAll()+"kjdsjkjhdjkj");
 		return  leaveTrackingRepo.findAll();
@@ -36,10 +35,8 @@ public class LeaveTrackingImpl implements LeaveTrackingService {
 	}
 
 	@Override
-	
 	public void save(LeaveTracking theLeaveTracking) {
-		// TODO Auto-generated method stub
-
+		leaveTrackingRepo.save(theLeaveTracking);
 	}
 
 	@Override

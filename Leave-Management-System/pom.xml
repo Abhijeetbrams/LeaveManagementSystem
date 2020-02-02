@@ -85,7 +85,21 @@
 			    <groupId>org.springframework.boot</groupId>
 			    <artifactId>spring-boot-starter-data-rest</artifactId>
 		</dependency>
+		
+		<!-- the spring-data-rest-webmvc artifact to your compile-time dependencies -->
 		<dependency>
+		  <groupId>org.springframework.data</groupId>
+		  <artifactId>spring-data-rest-webmvc</artifactId>
+		  </dependency>
+		  
+		  <!--  Spring AOP Starter-->
+		<dependency>
+		    <groupId>org.springframework.boot</groupId>
+		    <artifactId>spring-boot-starter-aop</artifactId>
+		    <version>2.2.2.RELEASE</version>
+		</dependency>
+		
+		<dependency>		
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-test</artifactId>
 			<scope>test</scope>
