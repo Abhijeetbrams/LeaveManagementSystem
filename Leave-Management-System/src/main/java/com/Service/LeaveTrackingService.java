@@ -13,4 +13,5 @@ public interface LeaveTrackingService {
 	public void save(LeaveTracking theLeaveTracking);
 	
 	public void deleteById(int theId);
+
 }

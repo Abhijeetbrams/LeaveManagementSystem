@@ -1,6 +1,7 @@
 package com.Service;
 
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 //import org.springframework.beans.factory.annotation.Qualifier;
@@ -18,9 +19,6 @@ public class LeaveTrackingImpl implements LeaveTrackingService {
 	private LeaveTrackingRepository leaveTrackingRepo;
 	
 	
-	
-	
-	
     @Override
 	public List<LeaveTracking> findAll() {
     	System.out.println( leaveTrackingRepo.findAll()+"kjdsjkjhdjkj");
@@ -30,8 +28,20 @@ public class LeaveTrackingImpl implements LeaveTrackingService {
 	@Override
 	
 	public LeaveTracking findById(int theId) {
-		// TODO Auto-generated method stub
-		return null;
+		Optional<LeaveTracking> result=leaveTrackingRepo.findById(theId);
+		
+		LeaveTracking leave=null;
+		if(result.isPresent())
+		{
+			leave=result.get();
+		}
+		else
+		{
+			throw new RuntimeException("Didn't find any leave by that Id-"+theId);
+		}
+		
+		return leave;
+		
 	}
 
 	@Override
@@ -45,5 +55,7 @@ public class LeaveTrackingImpl implements LeaveTrackingService {
 		// TODO Auto-generated method stub
 
 	}
+	
+	
 
 }

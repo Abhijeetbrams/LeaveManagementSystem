@@ -34,7 +34,8 @@ public class LeaveTracking {
 	@Column(name="Remarks")
 	private String remarks;
 
-	
+	@Column(name="status")
+	private String status;
 
 	public int getId() {
 		return id;
@@ -94,10 +95,16 @@ public class LeaveTracking {
 		this.remarks = remarks;
 	}
 
-	
+	public String getStatus() {
+		return status;
+	}
+
+	public void setStatus(String status) {
+		this.status = status;
+	}
 
 	public LeaveTracking(String username, String usertype, String leavetype, String from_date, String to_date,
-			String remarks) {
+			String remarks,String status) {
 		
 		this.username = username;
 		this.usertype = usertype;
@@ -105,13 +112,16 @@ public class LeaveTracking {
 		this.from_date = from_date;
 		this.to_date = to_date;
 		this.remarks = remarks;
+		this.status = status;
 	}
 
+	
 	
 	@Override
 	public String toString() {
 		return "LeaveTracking [id=" + id + ", username=" + username + ", usertype=" + usertype + ", leavetype="
-				+ leavetype + ", from_date=" + from_date + ", to_date=" + to_date + ", remarks=" + remarks + "]";
+				+ leavetype + ", from_date=" + from_date + ", to_date=" + to_date + ", remarks=" + remarks + ", status="
+				+ status + "]";
 	}
 
 	public LeaveTracking() {
