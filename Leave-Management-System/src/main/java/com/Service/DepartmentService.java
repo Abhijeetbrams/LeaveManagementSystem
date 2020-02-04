@@ -13,4 +13,6 @@ public interface DepartmentService {
 	public void save(Department theDepartment);
 //	
 	public void deleteById(int theId);
+	
+	//public void saveOrUpdate(Department theDepartment);
 }

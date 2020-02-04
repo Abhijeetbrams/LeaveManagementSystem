@@ -21,28 +21,45 @@
 		<div id="header">
 		<br/>
 	<br/>
-		<h1>Add Department</h1>
+		<h1>Add Employee</h1>
 		</div>
 	</div>
 	<br/>
 	<br/>
-	<% String id = request.getParameter("id"); %>
+	<% String username = request.getParameter("username"); %>
     
-      <%if(id==null){
-    	 id="0";
-      }%>
-     
+      
      
   
-   <c:url var="url" value="${id}">
-						     <c:param name="id" value="<%=id %>" />
+   <c:url var="url" value="${username}">
+						     <c:param name="id" value="<%=username %>" />
 						 </c:url>
-<form:form action="/department/save${url}" modelAttribute="departments">
+<form:form action="/employee/save${url}" modelAttribute="employee">
 
   
  <div class="container">
-    <label for="uname"><b>Department</b></label>
+    <label for="uname"><b>Username</b></label>
+    <form:input type="text" placeholder="Enter Department" name="username"  path="username" />
+   
+   <label for="uname"><b>department</b></label>
     <form:input type="text" placeholder="Enter Department" name="department"  path="department" />
+   
+   <label for="uname"><b>full_name</b></label>
+    <form:input type="text" placeholder="Enter Department" name="full_name"  path="full_name" />
+   
+   <label for="uname"><b>email</b></label>
+    <form:input type="text" placeholder="Enter Department" name="email"  path="email" />
+   
+   <label for="uname"><b>designation</b></label>
+    <form:input type="text" placeholder="Enter Department" name="designation"  path="designation" />
+   
+   <label for="uname"><b>reporting</b></label>
+    <form:input type="text" placeholder="Enter reporting" name="reporting"  path="reporting" />
+   
+   <label for="uname"><b>phone_number</b></label>
+    <form:input type="text" placeholder="Enter phone_number" name="phone_number"  path="phone_number" />
+   
+  
    
     <button type="submit" value="submit">Submit</button>
     <label>

@@ -21,13 +21,13 @@
 		<div id="header">
 		<br/>
 	<br/>
-		<h1>Add Department</h1>
+		<h1>Add Leave</h1>
 		</div>
 	</div>
 	<br/>
 	<br/>
-	<% String id = request.getParameter("id"); %>
-    
+<% String id = request.getParameter("id"); %>
+     
       <%if(id==null){
     	 id="0";
       }%>
@@ -37,12 +37,14 @@
    <c:url var="url" value="${id}">
 						     <c:param name="id" value="<%=id %>" />
 						 </c:url>
-<form:form action="/department/save${url}" modelAttribute="departments">
+
+<form:form action="/leave/save${url}" modelAttribute="leaves">
 
   
+     
  <div class="container">
-    <label for="uname"><b>Department</b></label>
-    <form:input type="text" placeholder="Enter Department" name="department"  path="department" />
+    <label for="uname"><b>Leave</b></label>
+    <form:input type="text" placeholder="Enter Leave" name="leavetype"  path="leavetype" />
    
     <button type="submit" value="submit">Submit</button>
     <label>

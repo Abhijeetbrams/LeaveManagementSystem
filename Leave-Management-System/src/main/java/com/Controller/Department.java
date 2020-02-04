@@ -41,18 +41,17 @@ public class Department {
 	
 	@PostMapping("/save")
 	public String save(@ModelAttribute("departments") com.POJO.Department theDepartment,Model theModel
-			,@RequestParam("id") String theId)
+			,@RequestParam("id") int theId)
 	{
-		if(theId!="0")
+		System.out.println(theId);
+		if(theId!=0)
 		{
-			com.POJO.Department thedepartment=departmentService.findById(
-					Integer.parseInt(theId));
+			com.POJO.Department thedepartment=departmentService.findById(theId);
+					
 			thedepartment.setDepartment(thedepartment.getDepartment());
 		}
-		//com.POJO.Department thedepartment=departmentService.findById(id);
-		//thedepartment.setDepartment(thedepartment.getDepartment());
+		System.out.println(theId);
 		 departmentService.save(theDepartment);
-		 //System.out.println(theId);
          return "redirect:/department/viewDepartment";
 	}
 	

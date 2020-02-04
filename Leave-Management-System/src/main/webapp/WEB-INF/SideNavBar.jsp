@@ -27,8 +27,8 @@
 
   <li><h4><a  href="/leaves/leaveTracking">Dashboard</a></h4></li>
   <li><h4><a  href="/department/viewDepartment">Department</a></h4></li>
-  <li><h4><a href="#news">Leave Type</a></h4></li>
-  <li><h4><a href="#contact">Employees</a></h4></li>
+  <li><h4><a href="/leave/viewLeave">Leave Type</a></h4></li>
+  <li><h4><a href="/employee/viewEmployee">Employees</a></h4></li>
   <li><h4><a href="#about">About</a></h4></li>
   <li><h4><a href="showMyLoginPage?logout">Logout</a></h4></li>
   
