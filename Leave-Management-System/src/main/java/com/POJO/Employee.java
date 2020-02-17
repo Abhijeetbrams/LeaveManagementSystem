@@ -1,11 +1,13 @@
 package com.POJO;
 
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
+import javax.validation.constraints.Pattern;
 
 @Entity
 @Table(name="employee")
@@ -13,8 +15,12 @@ public class Employee {
 
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
+	@Column(name="id")
+	private int id;
+	
 	@Column(name="username")
-	private String username;
+	private String username;	
+	
 	
 	@Column(name="department")
 	private String department;
@@ -31,10 +37,20 @@ public class Employee {
 	@Column(name="reporting")
 	private String reporting;
 	
+	@Pattern(regexp="^[789][0-9]{9}$",message="Enter Valid PhoneNumber")
 	@Column(name="phone_number")
 	private String phone_number;
 
 	
+	
+	public int getId() {
+		return id;
+	}
+
+	public void setId(int id) {
+		this.id = id;
+	}
+
 	public String getUsername() {
 		return username;
 	}
@@ -91,11 +107,15 @@ public class Employee {
 		this.phone_number = phone_number;
 	}
 
+	
+	
+
+	
 	@Override
 	public String toString() {
-		return "Employee [username=" + username + ", department=" + department + ", full_name=" + full_name + ", email="
-				+ email + ", designation=" + designation + ", reporting=" + reporting + ", phone_number=" + phone_number
-				+ "]";
+		return "Employee [id=" + id + ", username=" + username + ", department=" + department + ", full_name="
+				+ full_name + ", email=" + email + ", designation=" + designation + ", reporting=" + reporting
+				+ ", phone_number=" + phone_number + "]";
 	}
 
 	public Employee(String username, String department, String full_name, String email, String designation,

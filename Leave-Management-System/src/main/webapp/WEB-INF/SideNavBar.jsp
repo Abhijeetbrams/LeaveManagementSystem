@@ -34,11 +34,10 @@
   
   </sec:authorize>
    <sec:authorize access="hasRole('EMPLOYEE')">
-  <li><h4><a  href="#">Dashboard</a></h4></li>
   <li><h4><a  href="/leaves/leaveTracking">Leave Tracking</a></h4></li>
   <li><h4><a href="/applyleave">Apply Leave</a></h4></li>
-  <li><h4><a href="#contact">Leaves</a></h4></li>
-  <li><h4><a href="#about">About</a></h4></li>
+  <li><h4><a href="/employeeLeaveDetail/viewDetails">Leaves</a></h4></li>
+  <li><h4><a href="/employee/editEmp">Edit Profile</a></h4></li>
   <li><h4><a href="showMyLoginPage?logout">Logout</a></h4></li>
   
   </sec:authorize>

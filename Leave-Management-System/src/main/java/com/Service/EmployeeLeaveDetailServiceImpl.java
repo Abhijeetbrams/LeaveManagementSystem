@@ -34,6 +34,7 @@ public class EmployeeLeaveDetailServiceImpl implements EmployeeLeaveDetailServic
 		}
 		else
 		{
+			System.out.println(result);
 			throw new RuntimeException("Didn't find any EmployeeLeaveDetail by that Id-"+username);
 		}
 		

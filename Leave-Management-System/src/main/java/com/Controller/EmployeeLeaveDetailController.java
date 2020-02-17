@@ -1,42 +1,35 @@
 package com.Controller;
 
 import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpSession;
-import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.validation.BindingResult;
-//import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
 
-import com.POJO.Employee;
-import com.Service.EmployeeService;
-//import com.POJO.Department;
+import com.Service.EmployeeLeaveDetailService;
+
 @Controller
-@RequestMapping("/employee")
-public class EmployeeController {
-
+@RequestMapping("/employeeLeaveDetail")
+public class EmployeeLeaveDetailController {
 	@Autowired
-	private EmployeeService employeeService;
+	private EmployeeLeaveDetailService employeeLeaveDetailService;
 	
-	@GetMapping("/viewEmployee")
-	public String findAll(Model theModel)
-	{
-	
-		theModel.addAttribute("employee", employeeService.findAll());
-		return "ViewEmployee";
+	@GetMapping("/viewDetails")
+	public String findByUsername(Model theModel,HttpServletRequest request)
+	{ 
+		String username1=(String) theModel.getAttribute("username");
+	    System.out.println(username1);
+	    String username=(String) request.getSession().getAttribute("username");
+		theModel.addAttribute("employeeLeaveDetail", employeeLeaveDetailService.findByUsername(username));
+		return "EmployeeViewLeaveDetail";
 	}
 	
-	@GetMapping("/edit")
+/*	@GetMapping("/edit")
 	public String findById(@RequestParam("id") int theId,Model theModel)
 	{
-		Employee theEmployee=employeeService.findById(theId);
+		EmployeeLeaveDetail theEmployee=employeeLeaveDetailService.findByUsername(theId);
 		theModel.addAttribute("employee",theEmployee );
 		return "AddEmployee";
 	}
@@ -67,11 +60,12 @@ public class EmployeeController {
 		}
 		else
 		{
-		employeeService.save(theEmployee);
-		
-        return "redirect:/employee/viewEmployee";
+			employeeService.save(theEmployee);
+			
+	        return "redirect:/employee/viewEmployee";
 		}
 	}
+	
 	
 	@GetMapping("/delete")
 	public String delete(@RequestParam("id") int theId)
@@ -85,24 +79,5 @@ public class EmployeeController {
 	{
 		theModel.addAttribute("employee", new Employee());
 		return "AddEmployee";
-	}
-	
-	//For Employee
-	@GetMapping("/editEmp")
-	public String findByUsername(Model theModel,HttpServletRequest request)
-	{
-		String username=(String) request.getSession().getAttribute("username");
-		Employee theEmployee=employeeService.findByUsername(username);
-		System.out.println(theEmployee+" "+username);
-		theModel.addAttribute("employee",theEmployee );
-		//return "redirect:/employee/re-editEmp";
-		return "AddEmployee";
-	}
-	
-/*	@GetMapping("/editEmp")
-	public String employeeEdit(Model theModel)
-	{
-		theModel.addAttribute("employee",new Employee());
-		return "redirect:/employee/re-editEmp";
 	}*/
 }

@@ -26,13 +26,17 @@
 	</div>
 	<br/>
 	<br/>
-	<% String username = request.getParameter("username"); %>
+
+		<% String id = request.getParameter("id"); %>
     
-      
+      <%if(id==null){
+    	 id="0";
+      }%>
+     
      
   
-   <c:url var="url" value="${username}">
-						     <c:param name="id" value="<%=username %>" />
+   <c:url var="url" value="${id}">
+						     <c:param name="id" value="<%=id %>" />
 						 </c:url>
 <form:form action="/employee/save${url}" modelAttribute="employee">
 
@@ -58,8 +62,7 @@
    
    <label for="uname"><b>phone_number</b></label>
     <form:input type="text" placeholder="Enter phone_number" name="phone_number"  path="phone_number" />
-   
-  
+    <form:errors path="phone_number" />
    
     <button type="submit" value="submit">Submit</button>
     <label>

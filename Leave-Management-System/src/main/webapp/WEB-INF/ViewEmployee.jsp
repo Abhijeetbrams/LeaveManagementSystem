@@ -49,11 +49,11 @@
 						<td> ${tempEmployee.phone_number} </td>
 						
 						<c:url var="Edit" value="/employee/edit">
-						     <c:param name="username" value="${tempEmployee.username}" />
+						     <c:param name="id" value="${tempEmployee.id}" />
 						     
 						 </c:url> 
 						 <c:url var="Delete" value="/employee/delete">
-						     <c:param name="username" value="${tempEmployee.username}" />
+						     <c:param name="id" value="${tempEmployee.id}" />
 						 </c:url> 
 						
 						  <td><button type="button" ><a href="${Edit}">Edit</a></button>
@@ -66,6 +66,9 @@
 				</c:forEach>
 						
 			</table>
+			<!--<c:url var="Add" value="/employee/add">
+						     <c:param name="username" value="New" />
+						 </c:url> -->
 			<button type="button" ><a href="/employee/add">Add Employee</a></button>
 		</div>
 
